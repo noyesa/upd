@@ -10,7 +10,7 @@
     "build": "tsc",
     "clean": "rm -rf ./out",
     "prepack": "npm run clean && tsc --project tsconfig.publish.json",
-    "test": "node --test '**/*.test.js'",
+    "test": "node --test 'out/**/*.test.js'",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "watch-ts": "tsc --watch",
     "watch-tests": "node --test --watch 'out/**/*.test.js'",
