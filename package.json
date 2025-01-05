@@ -10,10 +10,10 @@
     "build": "tsc",
     "clean": "rm -rf ./out",
     "prepack": "npm run clean && tsc --project tsconfig.publish.json",
-    "test": "node --test 'out/**/*.test.js'",
+    "test": "npm run clean && npm run build && jest",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
     "watch-ts": "tsc --watch",
-    "watch-tests": "node --test --watch 'out/**/*.test.js'",
+    "watch-tests": "npm run clean && jest --watchAll",
     "start": "./bin/upd"
   },
   "repository": {
