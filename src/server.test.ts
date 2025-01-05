@@ -1,15 +1,13 @@
-import { describe, it } from 'node:test';
-import assert from 'node:assert';
-import { run } from './server';
+const { run } = require('./server');
 
 describe('run', () => {
   it('exists', () => {
-    assert.equal(typeof run, 'function');
+    expect(typeof run).toBe('function');
   });
 
   it('works', () => {
-    assert.doesNotThrow(() => {
+    expect(() => {
       run();
-    });
+    }).not.toThrow();
   });
 });
