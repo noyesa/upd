@@ -1,0 +1,45 @@
+{
+  "name": "upd",
+  "version": "0.0.1",
+  "description": "Distributed uptime monitor for networks made from bits of trash.",
+  "main": "out/server.js",
+  "bin": {
+    "upd": "./bin/upd"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf ./out",
+    "prepack": "npm run clean && tsc --project tsconfig.publish.json",
+    "test": "npm run clean && npm run build && jest",
+    "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "watch-ts": "tsc --watch",
+    "watch-tests": "npm run clean && jest --watchAll",
+    "start": "./bin/upd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noyesa/upd.git"
+  },
+  "keywords": [
+    "uptime",
+    "monitor",
+    "server"
+  ],
+  "author": "Andrew Noyes <noyesa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noyesa/upd/issues"
+  },
+  "homepage": "https://github.com/noyesa/upd#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.5",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
+  },
+  "volta": {
+    "node": "22.12.0"
+  }
+}
